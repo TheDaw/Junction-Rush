@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Junction-Rush.CSharp.Plugins", "Junction-Rush.CSharp.Plugins.csproj", "{DDA1AEF5-B96E-F953-A0EE-D2B9A13FF7EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Junction-Rush.CSharp", "Junction-Rush.CSharp.csproj", "{272BDA07-FAF8-101F-861A-FD13390F1B19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Junction-Rush.CSharp.Editor", "Junction-Rush.CSharp.Editor.csproj", "{DC58C0CB-6BCA-248C-5853-3CECD84E9B47}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DDA1AEF5-B96E-F953-A0EE-D2B9A13FF7EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDA1AEF5-B96E-F953-A0EE-D2B9A13FF7EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDA1AEF5-B96E-F953-A0EE-D2B9A13FF7EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDA1AEF5-B96E-F953-A0EE-D2B9A13FF7EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{272BDA07-FAF8-101F-861A-FD13390F1B19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{272BDA07-FAF8-101F-861A-FD13390F1B19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{272BDA07-FAF8-101F-861A-FD13390F1B19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{272BDA07-FAF8-101F-861A-FD13390F1B19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC58C0CB-6BCA-248C-5853-3CECD84E9B47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC58C0CB-6BCA-248C-5853-3CECD84E9B47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC58C0CB-6BCA-248C-5853-3CECD84E9B47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC58C0CB-6BCA-248C-5853-3CECD84E9B47}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
