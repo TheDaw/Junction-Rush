@@ -7,19 +7,24 @@ public class CarMove : MonoBehaviour {
     bool slowDown = false;
     public bool inTrafficZone = false;
     GameObject currentZone;
+    public enum Direction { North, East, South, West }
 
-	// Use this for initialization
-	void Start () {
+    public Direction currentDirection = Direction.North;
+
+    // Use this for initialization
+    void Start () {
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
         if (go)
-            this.gameObject.transform.Translate(new Vector3(0, 0, (float)speed));
+        {
+            driveToDestination();
+        }            
         if (slowDown == true)
         {
-            slowSpeed("North");
+            slowSpeed(currentDirection);
         }
         if (slowDown == false && speed <= 0.25)
         {
@@ -42,32 +47,76 @@ public class CarMove : MonoBehaviour {
             go = true;
         }
     }
-    
-    void slowSpeed(string direction)
-    {
-        if (direction == "North")
-        {
-            if (this.transform.position.z < -30 && speed >0.2)
-            {
-                speed -= 0.01;
-            }
-            else if (this.transform.position.z < -20 && this.transform.position.z > -25 && speed >0.15)
-            {
-                speed -= 0.01;
-            }
-            else if (this.transform.position.z < -12 && this.transform.position.z > -20 && speed >0.10)
-            {
-                speed -= 0.01;
-            }
-            else if (this.transform.position.z < -7 && this.transform.position.z > -12 && speed > 0.05)
-            {
-                speed -= 0.01;
-            }
 
-            else if (this.transform.position.z > -7 )
-            {
-                go = false;
-            }
+    void driveToDestination()
+    {
+        switch (currentDirection)
+        {
+            case Direction.North:
+                this.gameObject.transform.Translate(new Vector3(0, 0, (float)speed));
+                break;
+            case Direction.South:
+                this.gameObject.transform.Translate(new Vector3(0, 0, -(float)speed));
+                break;
+            case Direction.East:
+                this.gameObject.transform.Translate(new Vector3(0, 0, -(float)speed));
+                break;
+            case Direction.West:
+                this.gameObject.transform.Translate(new Vector3(0, 0, (float)speed));
+                break;
+        }
+    }
+    
+    void slowSpeed(Direction dir)
+    {
+        switch(dir)
+        {
+            case Direction.North:
+                if (this.transform.position.z < -30 && speed > 0.2)
+                {
+                    speed -= 0.01;
+                }
+                else if (this.transform.position.z < -20 && this.transform.position.z > -25 && speed > 0.15)
+                {
+                    speed -= 0.01;
+                }
+                else if (this.transform.position.z < -12 && this.transform.position.z > -20 && speed > 0.10)
+                {
+                    speed -= 0.01;
+                }
+                else if (this.transform.position.z < -7 && this.transform.position.z > -12 && speed > 0.05)
+                {
+                    speed -= 0.01;
+                }
+
+                else if (this.transform.position.z > -7)
+                {
+                    go = false;
+                }
+                break;
+            case Direction.South:
+                if (this.transform.position.z > 30 && speed > 0.2)
+                {
+                    speed -= 0.01;
+                }
+                else if (this.transform.position.z > 20 && this.transform.position.z < 25 && speed > 0.15)
+                {
+                    speed -= 0.01;
+                }
+                else if (this.transform.position.z > 12 && this.transform.position.z < 20 && speed > 0.10)
+                {
+                    speed -= 0.01;
+                }
+                else if (this.transform.position.z > 7 && this.transform.position.z < 12 && speed > 0.05)
+                {
+                    speed -= 0.01;
+                }
+
+                else if (this.transform.position.z < 7)
+                {
+                    go = false;
+                }
+                break;
         }
     }
 
