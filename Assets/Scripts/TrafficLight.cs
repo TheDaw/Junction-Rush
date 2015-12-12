@@ -5,7 +5,7 @@ public class TrafficLight : MonoBehaviour
 {
 
     public bool leftGreen = false;
-    public bool straightGreen = false;
+    public bool straightGreen = true;
     public bool rightGreen = false; 
 
     // Use this for initialization
